@@ -11,11 +11,11 @@ DEPENDENCIES: dependency modules
 ```
 Make sure to change the EXTENSION.json if the work is an extension or MODULES.json if the work is a module along with the pull request.
 
-the title must be soumething like this:
+The title must be soumething like this:
 <br>
 ```<NAME>: <SPECIFIER>```
 <br>
-for example:
+For example:
 <br>
 ```torrent: extention```
 
@@ -23,10 +23,10 @@ The work must have the following files in the project:
 1. <b>.mext:</b> Instruction of installing the work.
 
 
-The responsibility of the work, including testing and quality, lies with the author.
+The responsibility of the work, including testing, quality, and etc, lies with the author.
 
 ## project
-If you want to initialize something more than extension, module, or class, you should fork this repository and makee a pull request with the following template:
+If you want to initialize something more than extension, module, or class, you should fork this repository and make a pull request with the following template:
 
 ```
 NAME: project name - exactly like a github repository name
@@ -53,9 +53,9 @@ remove path/to/file.py
 move path/to/folder in path2
 ```
 
-Currently mext supports the following commands: 
+Currently .mext supports the following commands: 
 1. <b>replace:</b> it replaces files with new one.
 2. <b>remove:</b> it removes directories or files. You can use * char for all.
 3. <b>move:</b> it moves files and directories. You can use * char for all.
 
-The responsibility of the work, including testing and quality, lies with the author.
+The responsibility of the work, including testing, quality, and etc, lies with the author.

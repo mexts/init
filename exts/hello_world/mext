@@ -1,0 +1,5 @@
+module hello_world
+version 0.1
+move util/hello.py to core/util
+makedir modules/hello and add modules/hello/hello_world.py
+['util/hello.py', 'modules/hello/hello_world.py']

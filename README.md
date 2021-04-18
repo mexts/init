@@ -1,13 +1,12 @@
 # init
 
-## extension, module, class
+## extension, module
 fork this repository and make a pull request with the following template:
 
 ```
 NAME: work name
 TITLE: work title
 DESCRIPTION: a brief of the work
-DEPENDENCIES: dependency modules
 ```
 Make sure to change the <b>EXTENSION.json</b> if the work is an extension or <b>MODULES.json</b> if the work is a module along with the pull request.
 
@@ -25,8 +24,8 @@ The work must have the following files in the project:
 
 The responsibility of the work, including testing, quality, and etc, lies with the author.
 
-## project
-If you want to initialize something more than extension, module, or class, you should fork this repository and make a pull request with the following template:
+## packages
+If you want to initialize something more than extension, or module, you should fork this repository and make a pull request with the following template:
 
 ```
 NAME: project name - exactly like a github repository name
@@ -35,7 +34,7 @@ DESCRIPTION: a brief of the project
 AUTHOR: leader name. It could be a nick name.
 USERNAME: github author username
 ```
-Make sure to change the <b>PROJECTS.json</b> along with the pull request.
+Make sure to change the <b>PACKAGES.json</b> along with the pull request.
 The project must have the following files in the project:
 
 1. <b>LICENSE:</b> License file could be anything

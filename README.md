@@ -1,37 +1,23 @@
 # init
 
-## extension, module
-fork this repository and make a pull request with the following template:
+## extension
+Fork this repository and make a pull request. Each extension should just have one module. the extension should be in a directory that specify the extension name. module name must have the same name as directory. Look at the <i>/exts/hello_world extension</i> to get acquainted with the structure.
 
-```
-NAME: work name
-TITLE: work title
-DESCRIPTION: a brief of the work
-```
-Make sure to change the <b>EXTENSION.json</b> if the work is an extension or <b>MODULES.json</b> if the work is a module along with the pull request.
-
-The title must be soumething like this:
-<br>
-```<NAME>: <SPECIFIER>```
-<br>
-For example:
-<br>
-```torrent: extention```
+Make sure to change the <b>EXTENSION.json</b> along with the pull request.
 
 The work must have the following files in the project:
 1. <b>.mext:</b> Instruction of installing the work.
-
+2. <b>requirements:</b> You may want create it with `pip freeze` or `pip install pipreqs && pipreqs`
 
 The responsibility of the work, including testing, quality, and etc, lies with the author.
 
 ## packages
-If you want to initialize something more than extension, or module, you should fork this repository and make a pull request with the following template:
+If you want to initialize something more than extension, you should fork this repository and make a pull request with the following template:
 
 ```
 NAME: project name - exactly like a github repository name
 TITLE: project title
 DESCRIPTION: a brief of the project
-AUTHOR: leader name. It could be a nick name.
 USERNAME: github author username
 ```
 Make sure to change the <b>PACKAGES.json</b> along with the pull request.
@@ -46,15 +32,12 @@ The project must have the following files in the project:
 .mext file is what project uses it to install the code and have the following syntax:
 
 ```python
-
-replace path/to/file.py with path/to/file.py
-remove path/to/file.py
-move path/to/folder in path2
+makedir modules/hello and add modules/hello/hello_world.py
+move util/hello.py to core/util
 ```
 
 Currently .mext supports the following commands: 
-1. <b>replace:</b> it replaces files with new one.
-2. <b>remove:</b> it removes directories or files. You can use * char for all.
-3. <b>move:</b> it moves files and directories. You can use * char for all.
+2. <b>makedir:</b> create a new directore if it doesn't exist. Then, add a file to the directory.
+3. <b>move:</b> it moves files. If the file already exists, the file will be replaced.
 
 After acceptance, the username will be the leader of the project. The responsibility of the work, including testing, quality, and etc, lies with the author.

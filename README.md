@@ -1,13 +1,13 @@
 # init
 
 ## extension
-Fork this repository and make a pull request. Each extension should just have one module. the extension should be in a directory that specify the extension name. module name must have the same name as directory. Look at the <i>/exts/hello_world extension</i> to get acquainted with the structure.
+Fork this repository and make a pull request. Each extension should just have one module. The extension should be in a directory that specify the extension name. Look at the <i>/exts/hello_world extension</i> to get acquainted with the structure.
 
 Make sure to change the <b>EXTENSION.json</b> along with the pull request.
 
-The work must have the following files in the project:
-1. <b>.mext:</b> Instruction of installing the work.
-2. <b>requirements:</b> You may want create it with `pip freeze` or `pip install pipreqs && pipreqs`
+The work must have the following files in itself:
+1. <b>mext:</b> instruction of installing the work.
+2. <b>requirements:</b> you may want create it with `pip freeze` or `pip install pipreqs && pipreqs`
 
 The responsibility of the work, including testing, quality, and etc, lies with the author.
 
@@ -16,16 +16,17 @@ If you want to initialize something more than extension, you should fork this re
 
 ```
 NAME: project name - exactly like a github repository name
-TITLE: project title
-DESCRIPTION: a brief of the project
+TITLE: project title | could be none
+DESCRIPTION: a brief of the project | could be none
+KEYWORDS: relevant keywords | could be none
 USERNAME: github author username
 ```
 Make sure to change the <b>PACKAGES.json</b> along with the pull request.
 The project must have the following files in the project:
 
-1. <b>LICENSE:</b> License file could be anything
-2. <b>README.md:</b> Readme file could be anything. there's no template for README.md files.
-3. <b>.mext:</b> Instruction of installing the project.
+1. <b>LICENSE:</b> license file could be anything
+2. <b>README.md:</b> readme file could be anything. there's no template for README.md files.
+3. <b>mext:</b> instruction of installing the project.
 
 ## mext
 

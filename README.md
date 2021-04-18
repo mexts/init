@@ -27,17 +27,20 @@ The project must have the following files in the project:
 2. <b>README.md:</b> Readme file could be anything. there's no template for README.md files.
 3. <b>.mext:</b> Instruction of installing the project.
 
-## .mext
+## mext
 
-.mext file is what project uses it to install the code and have the following syntax:
+mext file is what project uses it to install the code and have the following syntax:
 
 ```python
-makedir modules/hello and add modules/hello/hello_world.py
+module hello_world
+version 0.1
 move util/hello.py to core/util
+makedir modules/hello and add modules/hello/hello_world.py
+['util/hello.py', 'modules/hello/hello_world.py']
 ```
 
 Currently .mext supports the following commands: 
 2. <b>makedir:</b> create a new directore if it doesn't exist. Then, add a file to the directory.
-3. <b>move:</b> it moves files. If the file already exists, the file will be replaced.
+3. <b>move:</b> it moves files. If the file already exists, the previous file will be replaced.
 
 After acceptance, the username will be the leader of the project. The responsibility of the work, including testing, quality, and etc, lies with the author.

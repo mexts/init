@@ -1,0 +1,1 @@
+## A image to text util class based on opencv and pytesseract.

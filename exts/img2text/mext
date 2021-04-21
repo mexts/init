@@ -1,0 +1,5 @@
+move mext to 
+move requirements to 
+move data/fox.txt to data
+move util/img2text.py to core/util
+['data/fox.txt', 'util/img2text.py']

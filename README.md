@@ -8,6 +8,7 @@ Make sure to change the <b>EXTENSION.json</b> along with the pull request.
 The work must have the following files in itself:
 1. <b>mext:</b> instruction of installing the work.
 2. <b>requirements:</b> you may want create it with `pip freeze` or `pip install pipreqs && pipreqs`
+3. <b>config.py:</b> if you want to config anything else, you can write your code in the config.py file, which will run before installing the extension
 
 The responsibility of the work, including testing, quality, and etc, lies with the author.
 
@@ -33,8 +34,6 @@ The project must have the following files in the project:
 mext file is what project uses it to install the code and have the following syntax:
 
 ```python
-module hello_world
-version 0.1
 move util/hello.py to core/util
 makedir modules/hello and add modules/hello/hello_world.py
 ['util/hello.py', 'modules/hello/hello_world.py']

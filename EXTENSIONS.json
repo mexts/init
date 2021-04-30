@@ -2,4 +2,5 @@
   "hello_world": {"version": "0.1", "author": "Saeed", "description": "A simple extension"},
   "img2text": {"version": "0.1", "author": "Saeed", "description": "Image to text util class"},
   "tf_histogram": {"version": "0.1", "author": "Kaushik", "description": "Generate a histogram plot of term frequencies of the input document"},
+  "myplotly": {"version": "0.1", "author": "Saeed", "description": "A mext for plotting data using plotly"}
 }

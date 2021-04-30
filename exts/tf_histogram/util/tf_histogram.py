@@ -1,21 +1,17 @@
 """
 OWASP Maryam!
-
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 any later version.
-
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import nltk
@@ -26,15 +22,17 @@ from nltk.corpus import stopwords
 
 class main:
 
-	def __init__(self, docs: 'documents'):
+	def __init__(self, docs: 'documents', form: 'documet form. e.g html'):
 		""" show histogram plot of web term frequency """
 		self.framework = main.framework
 		self.docs = docs.lower()
+		self.form = form.lower()
 		self.words = []
 
 	def remove_stopwords(self, without_punc=True):
 		stops = stopwords.words('english')
-		self._remove_html_tags()
+		if self.form == 'html':
+			self._remove_html_tags()
 		if without_punc:
 			self._punc()
 		split = self.docs.split()
@@ -44,14 +42,13 @@ class main:
 		self.docs = ' '.join(re.findall(r"[\w\-_#]+", self.docs))
 
 	def _remove_html_tags(self):
-		scripts = re.compile('<script[^>]*>.*?</script>', 
+		""" Remove html tags with regex"""
+		scripts = re.compile(r"<script[^>]*>.*?</script>", 
 				flags=re.DOTALL)
-		styles = re.compile('<style[^>]*>.*?</style>',
+		styles = re.compile(r"<style[^>]*>.*?</style>",
 				flags=re.DOTALL)
 		tags = re.compile(r'<[^>]+>|&nbsp|&amp|&lt|&gt|&quot|&apos')
-		self.docs = re.sub(scripts, '', self.docs)
-		self.docs = re.sub(styles, '', self.docs)
-		self.docs = re.sub(tags, '', self.docs)
+		self.docs = re.sub(tags, '', re.sub(styles, '', re.sub(scripts, '', self.docs)))
 
 	def _counter(self, last):
 		""" last: number of terms to show in plot """

@@ -14,7 +14,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import nltk
 import re
 
 from collections import Counter
@@ -22,33 +21,26 @@ from nltk.corpus import stopwords
 
 class main:
 
-	def __init__(self, docs: 'documents', form: 'documet form. e.g html'):
+	def __init__(self, docs: 'documents', form: 'documet form. e.g html', without_punc=True):
 		""" show histogram plot of web term frequency """
 		self.framework = main.framework
-		self.docs = docs.lower()
 		self.form = form.lower()
-		self.words = []
-
-	def remove_stopwords(self, without_punc=True):
-		stops = stopwords.words('english')
+		self.docs = docs.lower()
+		self.without_punc = without_punc
 		if self.form == 'html':
-			self._remove_html_tags()
-		if without_punc:
+			pp = self.framework.page_parse(self.docs)
+			pp.remove_html_tags
+			self.docs = pp.page
+		if self.without_punc:
 			self._punc()
-		split = self.docs.split()
-		self.words = [x for x in split if x not in stops]
+		self.words = self.docs.split()
+
+	def remove_stopwords(self):
+		stops = stopwords.words('english')
+		self.words = [x for x in self.words if x not in stops]
 
 	def _punc(self):
-		self.docs = ' '.join(re.findall(r"[\w\-_#]+", self.docs))
-
-	def _remove_html_tags(self):
-		""" Remove html tags with regex"""
-		scripts = re.compile(r"<script[^>]*>.*?</script>", 
-				flags=re.DOTALL)
-		styles = re.compile(r"<style[^>]*>.*?</style>",
-				flags=re.DOTALL)
-		tags = re.compile(r'<[^>]+>|&nbsp|&amp|&lt|&gt|&quot|&apos')
-		self.docs = re.sub(tags, '', re.sub(styles, '', re.sub(scripts, '', self.docs)))
+		self.words = re.findall(r"[\w\-_#]+", self.docs)
 
 	def _counter(self, last):
 		""" last: number of terms to show in plot """
